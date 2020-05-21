@@ -27,7 +27,7 @@ function findById(id){
 
 function addFood(food){
     return db('foods')
-        .insert(user, 'id')
+        .insert(food, 'id')
         .then(id =>{
             return findById(id[0])
         })

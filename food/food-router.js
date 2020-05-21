@@ -10,7 +10,8 @@ router.get('/list', (req,res)=>{
         res.status(200).json({message: 'Success! Getting foods list', foods})
     })
     .catch(err=>{
-        res.status(500).json({errorMessage: 'Error, problem with getting foods lists', err})
+        console.log(err)
+        res.status(500).json({errorMessage:  err.message})
     })
 })
 

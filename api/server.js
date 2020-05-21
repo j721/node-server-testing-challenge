@@ -2,7 +2,7 @@ const express = require("express");
 
 const server = express();
 
-const Food = require("../food/food-model.js");
+const Foods = require("../food/food-model.js");
 
 const Router = require('../food/food-router');
 
@@ -14,9 +14,9 @@ server.get("/", (req, res) => {
 });
 
 // server.get("/food", (req, res) => {
-//   Food.getAll()
-//     .then(hobbits => {
-//       res.status(200).json(hobbits);
+//   Foods.getAll()
+//     .then(food => {
+//       res.status(200).json(food);
 //     })
 //     .catch(error => {
 //       res.status(500).json(error);

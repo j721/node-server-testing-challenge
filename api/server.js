@@ -13,14 +13,5 @@ server.get("/", (req, res) => {
   res.status(200).json({ api: "Good to go!" });
 });
 
-// server.get("/food", (req, res) => {
-//   Foods.getAll()
-//     .then(food => {
-//       res.status(200).json(food);
-//     })
-//     .catch(error => {
-//       res.status(500).json(error);
-//     });
-// });
 
 module.exports = server;

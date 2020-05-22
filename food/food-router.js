@@ -8,6 +8,7 @@ router.get('/list', (req,res)=>{
     Foods.getAllFoods()
     .then(foods=>{
         res.status(200).json({message: 'Success! Getting foods list', foods})
+        // res.status(200).json(foods)
     })
     .catch(err=>{
         console.log(err)

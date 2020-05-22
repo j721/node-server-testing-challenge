@@ -15,40 +15,41 @@ describe("server", () => {
     });
 })
 
-// describe ('server',()=>{
-//     describe("GET / all foods",()=>{
-//         it( 'returns http status code 200 OK',()=>{
-//             request.server.get('/')
-//             .then(res=>{
-//                 expect(res.type).toMatch(/json/i);
-//             })
-//         })
-//     })
+describe ('server',()=>{
+    describe("GET / all foods",()=>{
+        it( 'returns http status code 200 OK',()=>{
+          supertest(server)
+          .get('/')
+            .then(res=>{
+                expect(res.type).toMatch(/json/i);
+            })
+        })
+    })
 
 
-// describe("GET / ", () => {
-//     it("should return http status code 200 OK", () => {
-//       return (
-//         supertest(server)
-//           .get("/")
-//           // .expect(200) // from supertest
-//           .then(response => {
-//             // from jest
-//             expect(response.status).toBe(200);
-//           })
-//       );
-//     });
+describe("GET / ", () => {
+    it("should return http status code 200 OK", () => {
+      return (
+        supertest(server)
+          .get("/")
+          // .expect(200) // from supertest
+          .then(response => {
+            // from jest
+            expect(response.status).toBe(200);
+          })
+      );
+    });
 
-//     it("should return { api: 'up' }", () => {
-//       return supertest(server)
-//         .get("/")
-//         .then(response => {
-//           expect(response.body).toEqual({  api: "Good to go!" });
-//           expect(response.body.api).toBeDefined();
-//           expect(response.body.api).toBe("Good to go!");
-//         });
-//     });
-//   });
+    it("should return { api: 'up' }", () => {
+      return supertest(server)
+        .get("/")
+        .then(response => {
+          expect(response.body).toEqual({  api: "Good to go!" });
+          expect(response.body.api).toBeDefined();
+          expect(response.body.api).toBe("Good to go!");
+        });
+    });
+  });
 
   describe("GET /get all foods", () => {
     it("should return an object", async () => {
@@ -102,13 +103,6 @@ describe('DELETE /list/:id', ()=>{
         })
     })
 
-    // it('should have a status of 500 when no id is given',async ()=>{
-    //     return supertest(server)
-    //     .delete('api/list/')
-    //     .then(res=>{
-    //         expect(res.status).toBe(500);
-    //     })
-    // })
 })
 
 describe("DELETE /list/:id", ()=>{
@@ -119,4 +113,5 @@ describe("DELETE /list/:id", ()=>{
             expect( typeof res.body).toBe("object")
         })
     })
+})
 })

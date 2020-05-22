@@ -5,9 +5,9 @@ const db = require("../data/dbConfig.js");
 
 const Foods = require ('../food/food-model');
 
-// afterEach(async ()=>{
-//     await db("foods").truncate();
-// })
+afterEach(async ()=>{
+    await db("foods").truncate();
+})
 
 describe("server", () => {
     it("can run the tests", () => {
